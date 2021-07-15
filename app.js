@@ -1,5 +1,3 @@
-//jshint esversion:6
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -35,12 +33,12 @@ app.get("/compose",function(req,res){
 });
 
 app.post("/compose",function(req,res){
-  const comp =  {
+  const composePost =  {
     title : req.body.postTitle,
     content : req.body.postContent
   };
 
-  posts.push(comp);
+  posts.push(composePost);
   res.redirect("/");
 });
 
