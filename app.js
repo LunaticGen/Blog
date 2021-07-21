@@ -8,7 +8,7 @@ const contactStartingContent = "Scelerisque eleifend donec pretium vulputate sap
 
 const app = express();
 
-var posts = [];
+let posts = [];
 
 app.set('view engine', 'ejs');
 
@@ -16,8 +16,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/",function(req,res){
-  res.render("home",{homeContent:homeStartingContent});
-  console.log(posts);
+  res.render("home",{
+    homeContent:homeStartingContent,
+    posts:posts
+  });
 });
 
 app.get("/about",function(req,res){
